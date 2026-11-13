@@ -1,49 +1,48 @@
-# Cinthiê Confeitaria — cardápio digital (protótipo)
+# Cinthiê Confeitaria — Cardápio digital (V1)
 
-Protótipo inicial da NEXORA para a **Cinthiê Confeitaria**. Paleta preto e dourado, layout responsivo, busca, filtros por categoria, ordenação e janela de detalhes.
+Cardápio digital responsivo criado pela **NEXORA** para a Cinthiê Confeitaria.
 
-> **Atenção:** todos os produtos, descrições, preços e fotografias são **ilustrativos**; não refletem as ofertas reais da confeitaria. O Instagram é o único canal real indicado nesta versão. Nenhum pedido ou pagamento é realizado pelo site.
+O projeto é **apenas um cardápio**: a pessoa entra e já encontra os produtos, sem páginas institucionais, banner de apresentação ou etapas extras.
 
-## Abrir e testar
+## O que está incluído
 
-Abra o arquivo `index.html` em um navegador. Não é necessário instalar Node.js nem bibliotecas. A fonte Google Fonts e as fotos de exemplo necessitam de conexão com a internet; existe uma ilustração alternativa caso uma foto não carregue.
+- Visual minimalista nas cores preto e dourado.
+- 14 produtos **fictícios**, divididos em 4 categorias.
+- Fotos ilustrativas, com imagem alternativa quando uma foto falha.
+- Busca, filtros, ordenação e detalhes do produto.
+- Layout adaptado ao celular, sem emojis ou enfeites desnecessários.
+- Link para o Instagram da confeitaria.
 
-## Publicar no Vercel
+**Importante:** nomes, fotos, descrições e preços são exemplos. Não representam o cardápio real da Cinthiê. Não existe sistema de pedidos, checkout nem integração de pagamento nesta versão.
 
-1. Crie um novo repositório GitHub chamado `cinthie-cardapio` (ou outro nome desejado).
-2. Envie `index.html`, `styles.css`, `script.js` e a pasta `assets/` para a raiz do repositório.
-3. No Vercel, clique em **Add New > Project**, importe esse repositório.
-4. Selecione Framework Preset **Other**, Build Command em branco, e Output Directory `.` (raiz) ou configuração padrão para site estático.
-5. Publique. Não há secrets, variáveis de ambiente ou scripts de build.
+## Como abrir
 
-## Trocar os exemplos pelos produtos reais
+Abra `index.html` diretamente no navegador. É um site estático, sem dependências de build.
 
-Abra `script.js`, localize a constante `products`. Cada objeto contém:
+## Como publicar na Vercel
 
-- `id`: identificador único sem espaços;
+Importe o repositório `vmonteiro333/cinthie-cardapio`, usando **Framework Preset: Other**. Não há comando de build. Ao enviar commits para a branch `main`, um projeto Vercel conectado a ela pode ser atualizado automaticamente.
+
+## Como substituir pelos produtos reais
+
+Edite o array `products` em `script.js`. Cada produto tem:
+
+- `id`: identificador único;
 - `category`: `confeitados`, `caseiros`, `sobremesas` ou `docinhos`;
-- `name`: nome do produto;
-- `description` / `details`: textos de apresentação;
-- `price`: preço em reais, número sem `R$` (ex.: `39.9`);
-- `image`: URL da foto (ou caminho como `./assets/bolo-cenoura.webp`);
-- `badge`: selo opcional, ou `null`.
+- `name`: nome;
+- `description`: resumo;
+- `details`: informações exibidas nos detalhes;
+- `price`: valor numérico, em reais;
+- `image`: endereço da imagem;
+- `badge`: destaque opcional.
 
-Quando os dados reais entrarem, procure e ajuste os avisos `demonstrativo`, `ilustrativo` e o booleano `DEMO_MODE`. O texto da home e as chamadas também precisam de aprovação da cliente antes de se tornarem afirmações oficiais.
+As fotos atuais são externas, do Pexels, e demandam internet. Quando tivermos os pratos reais, o ideal é usar fotografias próprias autorizadas, otimizadas em WebP e armazenadas em `assets/`.
 
-### Fotografia
+## Estrutura
 
-Esta prévia utiliza **links externos para fotos de amostra do Pexels**, sob a licença disponibilizada pela plataforma. Não são fotos dos produtos da Cinthiê. Ao receber os arquivos originais da confeitaria, recomenda-se otimizar em WebP e colocar na pasta `assets/` para maior confiabilidade.
+- `index.html`: estrutura do cardápio;
+- `styles.css`: visual preto e dourado e responsividade;
+- `script.js`: dados temporários e interações;
+- `assets/`: ícone e imagem alternativa.
 
-## Arquivos
-
-```
-index.html              página principal
-styles.css              visual preto/dourado e responsividade
-script.js               dados fictícios, categorias e interações
-assets/favicon.svg      ícone da aba
-assets/bolo-ilustrativo.svg  imagem alternativa
-```
-
-**Cliente:** Cinthiê Confeitaria — https://www.instagram.com/cinthieconfeitaria/
-
-**Desenvolvimento:** NEXORA.
+Instagram: https://www.instagram.com/cinthieconfeitaria/
