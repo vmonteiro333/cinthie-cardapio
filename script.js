@@ -67,9 +67,9 @@ const products = [
   item('bicho-de-pe', 'doces-sobremesas', 'Bicho de pé', 7, 'Doce bicho de pé vendido por unidade.', './assets/bicho-de-pe.webp'),
   item('cheesecake', 'doces-sobremesas', 'Cheesecake', 10, 'Cheesecake em porção individual.', './assets/cheesecake.webp'),
   item('pudim-pequeno', 'doces-sobremesas', 'Pudim pequeno', 8, 'Pudim em porção individual.', './assets/pudim-pequeno.webp'),
-  item('brownie-nutella', 'doces-sobremesas', 'Brownie de Nutella', null, 'Brownie de Nutella. O valor não estava totalmente visível na captura enviada.', './assets/brownie-nutella.webp'),
+  item('brownie-nutella', 'doces-sobremesas', 'Brownie de Nutella', null, 'Brownie de Nutella. Entre em contato para saber o preço.', './assets/brownie-nutella.webp'),
   item('brownie-ninho-nutella', 'doces-sobremesas', 'Brownie de Ninho com Nutella', 16, 'Brownie com cobertura de ninho e Nutella.', './assets/brownie-ninho-nutella.webp'),
-  item('brownie-tradicional', 'doces-sobremesas', 'Brownie tradicional', null, 'Brownie tradicional. O valor não estava totalmente visível na captura enviada.', './assets/brownie-tradicional.webp')
+  item('brownie-tradicional', 'doces-sobremesas', 'Brownie tradicional', null, 'Brownie tradicional. Preço disponível sob consulta.', './assets/brownie-tradicional.webp')
 ];
 
 const grid = document.querySelector('#products-grid');
