@@ -4,43 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#12100e" />
-  <meta name="description" content="Cardápio digital demonstrativo da Cinthiê Confeitaria. Conheça os bolos e doces." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cinthiê Confeitaria | Cardápio" />
-  <meta property="og:description" content="Confira nosso cardápio de bolos e doces. Prévia demonstrativa." />
+  <meta name="description" content="Cardápio digital da Cinthiê Confeitaria com bolos, doces, sobremesas e bebidas." />
   <title>Cardápio | Cinthiê Confeitaria</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.pexels.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
   <script src="./script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+
   <header class="site-header">
-    <div class="header-inner shell">
-      <div class="brand" aria-label="Cinthiê Confeitaria">
-        <span class="brand-seal" aria-hidden="true">C</span>
-        <span class="brand-name">Cinthiê <small>CONFEITARIA</small></span>
+    <div class="shell brand-panel">
+      <img class="brand-logo" src="./assets/logo-cinthie.webp" alt="Logo da Cinthiê Confeitaria" />
+      <p class="brand-subtitle">Bolos confeitados, bolos caseiros, doces, sobremesas e bebidas.</p>
+      <div class="brand-actions">
+        <a class="header-social" href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
-      <a class="header-social" href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </header>
+
   <main id="cardapio" class="menu-section">
     <div class="shell">
       <div class="menu-heading">
         <div>
-          <p class="eyebrow">CINTHIÊ CONFEITARIA</p>
-          <h1 id="menu-title">Nosso <em>cardápio</em></h1>
-          <p class="menu-subtitle">Bolos, sobremesas e docinhos para cada ocasião.</p>
+          <p class="eyebrow">CARDÁPIO DIGITAL</p>
+          <h1>Conheça nosso <em>cardápio</em></h1>
+          <p class="menu-subtitle">Agora com os produtos do catálogo enviado. Você pode buscar, filtrar por categoria e abrir cada item para ver mais detalhes.</p>
         </div>
       </div>
+
       <div class="demo-note" role="note">
         <span class="note-icon" aria-hidden="true">i</span>
-        <p><strong>Cardápio de demonstração.</strong> Produtos, fotos e preços são exemplos e ainda não representam os itens oficiais da confeitaria.</p>
+        <p><strong>Observação:</strong> 27 dos 28 produtos já estão com fotos reais. Falta apenas a imagem do bolo formigueiro grande; até lá, ele aparece com imagem provisória.</p>
       </div>
+
       <div class="menu-tools">
         <div class="categories" id="categories" role="group" aria-label="Filtrar por categoria"></div>
         <div class="search-sort">
@@ -59,11 +59,14 @@
           </label>
         </div>
       </div>
+
       <div class="results-meta">
         <p id="results-count" aria-live="polite"></p>
-        <span>Preços ilustrativos</span>
+        <span>Toque em um item para ver os detalhes</span>
       </div>
+
       <div class="products-grid" id="products-grid"></div>
+
       <div class="empty-state" id="empty-state" hidden>
         <h2>Nenhum produto encontrado</h2>
         <p>Tente outro termo ou veja todas as categorias.</p>
@@ -71,12 +74,14 @@
       </div>
     </div>
   </main>
+
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <p>Cinthiê Confeitaria <span aria-hidden="true">·</span> Cardápio demonstrativo</p>
+      <p>Cinthiê Confeitaria · Cardápio digital</p>
       <a href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </footer>
+
   <div class="modal-backdrop" id="product-modal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
       <button type="button" class="modal-close" id="modal-close" aria-label="Fechar detalhes">×</button>
@@ -86,9 +91,9 @@
         <h2 id="modal-title"></h2>
         <p id="modal-description"></p>
         <div class="modal-divider"></div>
-        <div class="modal-price"><span>VALOR ILUSTRATIVO</span><strong id="modal-value"></strong></div>
-        <p class="modal-footnote">Produto de exemplo. Confirme opções e disponibilidade diretamente com a confeitaria.</p>
-        <a class="btn btn-gold" href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Consultar no Instagram</a>
+        <div class="modal-price"><span>VALOR</span><strong id="modal-value"></strong></div>
+        <p class="modal-footnote">Para confirmar sabores, disponibilidade e encomendas, entre em contato com a Cinthiê pelo Instagram.</p>
+        <a class="btn btn-gold" href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Chamar no Instagram</a>
       </div>
     </div>
   </div>
