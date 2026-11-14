@@ -13,9 +13,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .skip-link{position:absolute;left:8px;top:-120px;z-index:200;padding:12px;background:var(--gold);color:#1b120a}
 .skip-link:focus{top:8px}
 .site-header{border-bottom:1px solid var(--line);background:radial-gradient(circle at top,#2a2015 0,#17120e 48%,#100e0c 100%)}
-.brand-panel{padding:12px 0;display:flex;flex-direction:row;align-items:center;gap:20px;text-align:left}
-.brand-logo{width:100px;height:auto;flex:none;mix-blend-mode:screen}
-.brand-subtitle{margin:0 auto 0 0;max-width:520px;font-size:13px;line-height:1.5;color:#d4c1a8}
+.brand-panel{padding:6px 0;display:flex;flex-direction:row;align-items:center;gap:16px;text-align:left}
+.brand-logo{width:56px;height:56px;object-fit:contain;flex:none;mix-blend-mode:screen}
+.brand-subtitle{margin:0 auto 0 0;max-width:520px;font-size:12px;line-height:1.4;color:#d4c1a8}
 .brand-actions{margin:0 0 0 auto;flex:none}
 .header-social{display:inline-flex;align-items:center;justify-content:center;border:1px solid #846642;padding:12px 18px;border-radius:999px;color:#e4c499;font-size:12px;transition:background .2s}
 .header-social:hover{background:#2d241b}
@@ -98,6 +98,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 @media(max-width:760px){.brand-panel{padding:10px 0;flex-direction:row;flex-wrap:wrap;gap:8px 12px;text-align:left}.brand-logo{width:74px}.brand-subtitle{font-size:11px;margin:0;flex:1 1 150px}.brand-actions{margin:0 0 0 auto}.header-social{padding:9px 12px;font-size:11px}.menu-heading{margin-bottom:22px}}
 @media(max-width:760px){.product-badge{display:none}.product-category{display:block}}
+@media(max-width:760px){.site-header{display:none}}
 @media(max-width:760px){
   .category-group-grid,.products-grid-flat{grid-template-columns:minmax(0,1fr);gap:12px}
   .product-card{display:grid;grid-template-columns:112px minmax(0,1fr);border-radius:16px}
