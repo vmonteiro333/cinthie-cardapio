@@ -105,7 +105,6 @@ function filteredProducts() {
   const term = normalize(searchInput.value.trim());
 
   let list = products.filter(p =>
-    (activeCategory === 'todos' || p.category === activeCategory) &&
     normalize(p.name + ' ' + p.description + ' ' + categoryLabel[p.category]).includes(term)
   );
 
@@ -152,7 +151,6 @@ function renderProducts() {
   const visible = filteredProducts();
   const term = normalize(searchInput.value.trim());
   const showGroupedView =
-    activeCategory === 'todos' &&
     !term &&
     sortSelect.value === 'featured';
 
@@ -166,11 +164,11 @@ function renderProducts() {
       .filter(group => group.items.length);
 
     grid.innerHTML = grouped.map(group => `
-      <section class="category-group" aria-labelledby="section-${group.category.id}">
+      <section class="category-group" id="section-${group.category.id}" aria-labelledby="label-${group.category.id}">
         <div class="category-group-header">
           <div>
             <p class="category-kicker">Categoria</p>
-            <h2 id="section-${group.category.id}">${esc(group.category.label)}</h2>
+            <h2 id="label-${group.category.id}">${esc(group.category.label)}</h2>
           </div>
           <span class="category-total">${group.items.length} ${group.items.length === 1 ? 'item' : 'itens'}</span>
         </div>
@@ -221,8 +219,17 @@ categoryContainer.addEventListener('click', event => {
   if (!btn) return;
 
   activeCategory = btn.dataset.category;
+  searchInput.value = '';
+  sortSelect.value = 'featured';
   renderCategories();
   renderProducts();
+  const target = document.getElementById(
+    activeCategory === 'todos' ? 'cardapio' : `section-${activeCategory}`
+  );
+  target?.scrollIntoView({
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    block: 'start'
+  });
 });
 
 grid.addEventListener('click', event => {
