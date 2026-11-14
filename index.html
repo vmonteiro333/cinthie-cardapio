@@ -19,7 +19,10 @@
   <header class="site-header">
     <div class="shell brand-panel">
       <img class="brand-logo" src="./assets/logo-cinthie.webp" alt="Logo da Cinthiê Confeitaria" />
-      <p class="brand-subtitle">Bolos confeitados, bolos caseiros, doces, sobremesas e bebidas.</p>
+      <label class="search-field" for="product-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        <input id="product-search" type="search" placeholder="Buscar um produto..." autocomplete="off" />
+      </label>
       <div class="brand-actions">
         <a class="header-social" href="https://www.instagram.com/cinthieconfeitaria/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
@@ -44,24 +47,7 @@
         </svg>
       </div>
 
-      <div class="menu-tools">
-        <div class="categories" id="categories" role="group" aria-label="Filtrar por categoria"></div>
-        <div class="search-sort">
-          <label class="search-field" for="product-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
-            <input id="product-search" type="search" placeholder="Buscar um produto..." autocomplete="off" />
-          </label>
-          <label class="sort-field" for="sort-select">
-            <span>Ordenar por</span>
-            <select id="sort-select">
-              <option value="featured">Destaques</option>
-              <option value="name">Nome A–Z</option>
-              <option value="price-low">Menor preço</option>
-              <option value="price-high">Maior preço</option>
-            </select>
-          </label>
-        </div>
-      </div>
+      <nav class="categories" id="categories" aria-label="Ir para categoria"></nav>
 
       <div class="results-meta">
         <p id="results-count" aria-live="polite"></p>

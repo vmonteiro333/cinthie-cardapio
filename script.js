@@ -75,7 +75,6 @@ const products = [
 const grid = document.querySelector('#products-grid');
 const categoryContainer = document.querySelector('#categories');
 const searchInput = document.querySelector('#product-search');
-const sortSelect = document.querySelector('#sort-select');
 const resultsCount = document.querySelector('#results-count');
 const emptyState = document.querySelector('#empty-state');
 const modalBackdrop = document.querySelector('#product-modal');
@@ -104,26 +103,9 @@ function renderCategories() {
 function filteredProducts() {
   const term = normalize(searchInput.value.trim());
 
-  let list = products.filter(p =>
+  return products.filter(p =>
     normalize(p.name + ' ' + p.description + ' ' + categoryLabel[p.category]).includes(term)
   );
-
-  if (sortSelect.value === 'name')
-    list.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-
-  if (sortSelect.value === 'price-low')
-    list.sort((a, b) =>
-      ((a.price ?? 999999) - (b.price ?? 999999)) ||
-      a.name.localeCompare(b.name, 'pt-BR')
-    );
-
-  if (sortSelect.value === 'price-high')
-    list.sort((a, b) =>
-      ((b.price ?? -1) - (a.price ?? -1)) ||
-      a.name.localeCompare(b.name, 'pt-BR')
-    );
-
-  return list;
 }
 
 function renderProductCard(p) {
@@ -150,9 +132,7 @@ function renderProductCard(p) {
 function renderProducts() {
   const visible = filteredProducts();
   const term = normalize(searchInput.value.trim());
-  const showGroupedView =
-    !term &&
-    sortSelect.value === 'featured';
+  const showGroupedView = !term;
 
   if (showGroupedView) {
     const grouped = categories
@@ -220,7 +200,6 @@ categoryContainer.addEventListener('click', event => {
 
   activeCategory = btn.dataset.category;
   searchInput.value = '';
-  sortSelect.value = 'featured';
   renderCategories();
   renderProducts();
   const target = document.getElementById(
@@ -238,12 +217,10 @@ grid.addEventListener('click', event => {
 });
 
 searchInput.addEventListener('input', renderProducts);
-sortSelect.addEventListener('change', renderProducts);
 
 document.querySelector('#reset-filters').addEventListener('click', () => {
   activeCategory = 'todos';
   searchInput.value = '';
-  sortSelect.value = 'featured';
   renderCategories();
   renderProducts();
   searchInput.focus();
